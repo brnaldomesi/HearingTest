@@ -1,0 +1,153 @@
+<div style="background-color:#f2f2f2;">
+  <table cellpadding="0" cellspacing="0" style="width: 100%; font-family: Helvetica, Arial, sans serif; line-height: 150%; padding: 20px 20px 0px;">
+    <tbody>
+      <tr>
+        <td valign="top" align="left" style="width: 100%; padding: 20px 15px 15px; margin: 0; text-align: center;">
+          <a href="http://www.audicus.com" align="center" target="_blank" style="color:#fff; font-size: 28px; line-height: 28px; text-decoration:none; font-weight:bold; font-family: Helvetica, Arial, sans serif; letter-spacing: 1px;">
+            <h2 style="font-size: 28px; font-family: Helvetica, Arial, sans serif; line-height: 100%; margin: 0; color: #404042;">Audicus</h2>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="margin: 20px; background-color:white; text-align: center; padding:20px; border-radius:4px;">
+    <h2 style="font-size: 32px; line-height: 100%; font-family: Helvetica, Arial, sans serif; margin: 0; color: #333333;">Your Hearing Results</h2>
+    <hr>
+    <table cellpadding="0" cellspacing="0" style="width: 100%; font-family: Helvetica, Arial, sans serif; line-height: 150%; padding: 20px 20px 0px;">
+      <thead>
+        <tr>
+          <td style="font-size:20px; font-family: Helvetica, Arial, sans serif; text-align:right;">Left Ear</td>
+          <td></td>
+          <td style="font-size:20px; font-family: Helvetica, Arial, sans serif; text-align:left;">Right Ear</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div style="width:{{results['L']['4000']}}%; height:28px; margin-bottom:10px; margin-top:10px; float:right;
+            {% if results['L']['4000'] >= 85 %}
+              background-color:#8dc63f;
+            {% elif results['L']['4000'] >= 45 and results['L']['4000'] < 85 %}
+              background-color:#fccd09;
+            {% else %}
+              background-color:#ef4036;
+            {% endif %}
+             display:inline-block;">
+              <div style="text-align:left; color:white; padding:4px;">{{results['L']['4000']}}%</div>
+            </div>
+          </td>
+          <td style="text-align:center;">High Tones</td>
+          <td>
+            <div style="width:{{results['R']['4000']}}%; height:28px; margin-bottom:10px; margin-top:10px; float:left;
+            {% if results['R']['4000'] >= 85 %}
+              background-color:#8dc63f;
+            {% elif results['R']['4000'] >= 45 and results['R']['4000'] < 85 %}
+              background-color:#fccd09;
+            {% else %}
+              background-color:#ef4036;
+            {% endif %}
+              display:inline-block;">
+              <div style="text-align:right; color:white; padding:4px;">{{results['R']['4000']}}%</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div style="width:{{results['L']['2000']}}%; height:28px; margin-bottom:10px; margin-top:10px; float:right;
+            {% if results['L']['2000'] >= 85 %}
+              background-color:#8dc63f;
+            {% elif results['L']['2000'] >= 45 and results['L']['2000'] < 85 %}
+              background-color:#fccd09;
+            {% else %}
+              background-color:#ef4036;
+            {% endif %}
+              display:inline-block;">
+              <div style="text-align:left; color:white; padding:4px;">{{results['L']['2000']}}%</div>
+            </div>
+          </td>
+          <td rowspan="2" style="text-align:center;">Mid Tones</td>
+          <td>
+            <div style="width:{{results['R']['2000']}}%; height:28px; margin-bottom:10px; margin-top:10px; float:left;
+            {% if results['R']['2000'] >= 85 %}
+              background-color:#8dc63f;
+            {% elif results['R']['2000'] >= 45 and results['R']['2000'] < 85 %}
+              background-color:#fccd09;
+            {% else %}
+              background-color:#ef4036;
+            {% endif %}   display:inline-block;">
+              <div style="text-align:right; color:white; padding:4px;">{{results['R']['2000']}}%</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div style="width:{{results['L']['1000']}}%; height:28px; margin-bottom:10px; margin-top:10px; float:right;
+            {% if results['L']['1000'] >= 85 %}
+              background-color:#8dc63f;
+            {% elif results['L']['1000'] >= 45 and results['L']['1000'] < 85 %}
+              background-color:#fccd09;
+            {% else %}
+              background-color:#ef4036;
+            {% endif %}
+             display:inline-block;">
+              <div style="text-align:left; color:white; padding:4px;">{{results['L']['1000']}}%</div>
+            </div>
+          </td>
+          <td>
+            <div style="width:{{results['R']['1000']}}%; height:28px; margin-bottom:10px; margin-top:10px; float:left;
+            {% if results['R']['1000'] >= 85 %}
+              background-color:#8dc63f;
+            {% elif results['R']['1000'] >= 45 and results['R']['1000'] < 85 %}
+              background-color:#fccd09;
+            {% else %}
+              background-color:#ef4036;
+            {% endif %}
+             display:inline-block;">
+              <div style="text-align:right; color:white; padding:4px;">{{results['R']['1000']}}%</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div style="width:{{results['L']['500']}}%; height:28px; margin-bottom:10px; margin-top:10px; float:right;
+            {% if results['L']['500'] >= 85 %}
+              background-color:#8dc63f;
+            {% elif results['L']['500'] >= 45 and results['L']['500'] < 85 %}
+              background-color:#fccd09;
+            {% else %}
+              background-color:#ef4036;
+            {% endif %}
+            display:inline-block;">
+              <div style="text-align:left; color:white; padding:4px;">{{results['L']['500']}}%</div>
+            </div>
+          </td>
+          <td style="text-align:center;">Low Tones</td>
+          <td>
+            <div style="width:{{results['R']['500']}}%; height:28px; margin-bottom:10px; margin-top:10px; float:left;
+            {% if results['R']['500'] >= 85 %}
+              background-color:#8dc63f;
+            {% elif results['R']['500'] >= 45 and results['R']['500'] < 85 %}
+              background-color:#fccd09;
+            {% else %}
+              background-color:#ef4036;
+            {% endif %}
+              display:inline-block;">
+              <div style="text-align:right; color:white; padding:4px;">{{results['R']['500']}}%</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <table cellpadding="0" cellspacing="0" style="width: 100%; font-family: Helvetica, Arial, sans serif; color: #555555; line-height: 150%; padding: 10px 20px 0px;">
+    <tbody>
+      <tr>
+        <td valign="top" align="left" style="width: 100%; padding: 20px 20px 15px; text-align: center;">
+          <p style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; color: #999; margin: 0;">This email was automatically generated. If you received this message in error, please send us an email at <a href="mailto:help@audicus.com" target="_blank" style="color: #999;">help@audicus.com</a>.</p>
+          <p style="font-size:20px; margin:0px; font-family: Arial, Helvetica, sans-serif; font-weight:bold; color:#333333; text-align: center;">Audicus</p>
+          <p style="margin-top:5px; font-family: Arial, Helvetica, sans-serif; color:#999; text-align: center;">40 Exchange Place<br>Suite 1920<br>New York, NY</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

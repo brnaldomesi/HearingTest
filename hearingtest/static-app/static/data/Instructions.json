@@ -1,0 +1,141 @@
+[
+  [
+    {
+      "title" : "Welcome to the Audicus Hearing Test"
+    },
+    {
+      "panel-text" : "<p>To do the hearing test accurately, you need the hearing test kit.  You can order one for <strong>FREE</strong> below.</p>",
+      "panel-button-text" : "Get the Hearing Test",
+      "panel-button-action" : "start"
+    },
+    {
+      "panel-text" : "<p>If you <strong>have received</strong> the hearing test kit, you can get started below.</p>",
+      "panel-button-text" : "Get Started",
+      "panel-button-action" : "next"
+    }
+  ],
+  [
+    {
+      "title" : "Great! Taking the hearing test is easy."
+    },
+    {
+      "subtitle" : "<h4>First enter your Order Number and Email</h4>"
+    },
+    {
+      "form" : "true"
+    }
+  ],
+  [
+    {
+      "pretitle" : "Step 1 of 2"
+    },
+    {
+      "title" : "Situational Configuration"
+    },
+    {
+      "subtitle" : "<h4>Select four enviroments where you usually have difficulty hearing. </br> Simply tap a list item to select it.  Tap it again to un-select.</h4>"
+    },
+    {
+      "enviroment-selector" : "true"
+    },
+    {
+      "buttons" : "Continue"
+    }
+  ],
+  [
+    {
+      "pretitle" : "Step 2 of 2"
+    },
+    {
+      "title" : "Situational Configuration"
+    },
+    {
+      "subtitle" : "<h4>Our listening exercises will help us create a map of your hearing for the Solo, so we can better personalize it.</h4>"
+    },
+    {
+      "extra-text" : "<h4><strong>But first, let's set up.<strong></h4>"
+    },
+    {
+      "buttons" : "Click to Proceed"
+    }
+  ],
+  [
+    {
+      "pretitle" : "Step 2 of 2"
+    },
+    {
+      "title" : "Let's Set Up!"
+    },
+    {
+      "subtitle" : "<h4>Move to a quiet enviroment</h4>"
+    },
+    {
+      "extra-text" : "<h4><strong>Turn the volume all the way up.</strong></h4>"
+    },
+    {
+      "image" : "raise-volume.png",
+      "image-width" : "500",
+      "image-height" : "300"
+    },
+    {
+      "buttons" : "Continue"
+    }
+  ],
+  [
+    {
+      "pretitle" : "Step 2 of 2"
+    },
+    {
+      "title" : "Let's Set Up!"
+    },
+    {
+      "subtitle" : "<h4>Insert the USB Sound Card into a USB port.</h4>"
+    },
+    {
+      "image" : "usb-insert.png",
+      "image-width" : "500",
+      "image-height" : "300"
+    },
+    {
+      "buttons" : "Continue"
+    }
+  ],
+  [
+    {
+      "pretitle" : "Step 2 of 2"
+    },
+    {
+      "title" : "Let's Set Up!"
+    },
+    {
+      "extra-text" : "<h4>Place the: </br> <span style='color:red'>RED</span> earphone in your RIGHT ear. </br> Place the: </br> <span style='color:blue'>BLUE</span> earphone in your LEFT ear.</h4>"
+    },
+    {
+      "image" : "instruct2.png",
+      "image-width" : "320px",
+      "image-height" : "405px"
+    },
+    {
+      "buttons" : "Continue"
+    }
+  ],
+  [
+    {
+      "pretitle" : "Step 2 of 2"
+    },
+    {
+      "title" : "Let's Set Up!"
+    },
+    {
+      "subtitle" : "<h4>Place the earmuffs on top of the earphones.<h4>"
+    },
+    {
+      "image" : "instruct3.png",
+      "image-width" : "320px",
+      "image-height" : "260px"
+    },
+    {
+      "buttons" : "Continue"
+    }
+  ]
+]

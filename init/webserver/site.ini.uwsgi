@@ -1,0 +1,13 @@
+[uwsgi]
+# Variables
+#master = 1
+#gevent = 10
+processes = 4
+socket = /var/www/run/%n.sock
+chdir = /var/www/hearingtest/hearingtest/python-app/
+pythonpath = /var/www/hearingtest/hearingtest/python-app/
+wsgi-file = /var/www/hearingtest/hearingtest/python-app/runserver.py
+callable = application
+uid = www-data
+gid = www-data
+logto = /var/log/uwsgi/%n.log
