@@ -39,7 +39,7 @@ server_type = {
 #######
 
 #APP_SECRET_KEY = 'CHANGE ME -- import os; os.urandom(24)'
-APP_SECRET_KEY = '\x01j\x9c\xb70a\xa1\xe6\xb7\x92\xeb\xe3K\xec\x12\xcb\xe5\x0e/9\xfb\xb4\x881'
+APP_SECRET_KEY = 'xxx'
 
 MAX_COOKIE = 60*60*24*31 #1 month
 
@@ -55,8 +55,8 @@ RANDOM_BYTES_LENGTH = 256
 
 #S3
 AWS_IAM_USERNAME = "com.audicus.staging.iam"
-AWS_KEY = "AKIAJM3PVX47F5QOD52A"
-AWS_SECRET = "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"
+AWS_KEY = "xxx"
+AWS_SECRET = "xxx"
 AWS_REGION_DEFAULT = "us-east-1"
 
 #SES
