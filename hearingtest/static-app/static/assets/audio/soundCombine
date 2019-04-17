@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+ARRAYHZ=(500 1000 2000 4000 8000)
+ARRAYDB=(0 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90)
+
+for hz in ${ARRAYHZ[@]}; do
+	for db in ${ARRAYDB[@]}; do
+	    filename=$(basename "$fullfile")
+	    right="R"$hz"_"$db"dB.wav"
+	    left="L"$hz"_"$db"dB.wav"
+	    both="B"$hz"_"$db"dB.wav"
+		sox ${left} ${right} --channels 2 --combine merge ${both}
+	done
+done

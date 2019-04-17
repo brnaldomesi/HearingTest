@@ -1,0 +1,24 @@
+{
+  "name": "emails",
+  "version": "1.0.0",
+  "description": "Generate email templates",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/audicus-co/hearingtest.git"
+  },
+  "author": "Greg Hunt <freshbrewedweb@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-email-builder": "^3.0.0",
+    "gulp-mail": "^0.1.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1"
+  }
+}

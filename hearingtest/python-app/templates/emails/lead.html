@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<body style="margin: 0; padding: 0;">
+  <div class="container" style="background-color: #f2f2f2; padding: 30px; font-family: Helvetica, Arial, sans-serif; text-align: center;">
+    <table cellpadding="0" cellspacing="0" class="header" style="width: 100%; line-height: 1.5; padding: 10px 10px 0px;">
+      <tbody>
+        <tr>
+          <td valign="top" align="left" colspan="4" style="width: 100%; padding: 20px 15px 15px; margin: 0; text-align: center;">
+            <a href="http://www.audicus.com" class="logo" align="center" target="_blank" style="display: block; margin-bottom: 30px; color: #404042; font-size: 24px; line-height: 24px; text-decoration: none; font-weight: bold; letter-spacing: 1px;">
+                <img alt="Audicus" width="250" height="50" src="https://www.audicus.com/emails/images/logo-dark.png" style="display: block; margin: auto;">
+            </a>
+          </td>
+        </tr>
+        <tr class="menu">
+          <td><a href="https://www.audicus.com/" style="font-weight: bold; color: #999999; text-decoration: none; display: block; padding: 20px;">Audicus.com</a></td>
+          <td><a href="https://www.audicus.com/why-audicus/" style="font-weight: bold; color: #999999; text-decoration: none; display: block; padding: 20px;">About Us</a></td>
+          <td><a href="https://www.audicus.com/pages/hearing-aids" style="font-weight: bold; color: #999999; text-decoration: none; display: block; padding: 20px;">Hearing Aids</a></td>
+          <td><a href="https://www.audicus.com/customer-service/" style="font-weight: bold; color: #999999; text-decoration: none; display: block; padding: 20px;">Contact Us</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="results" style="padding: 30px 15px; background-color: white;">
+      <h2 class="section-title" style="color: #333333; font-weight: normal; font-size: 1em; padding: 0 20px 10px 20px; margin: 0 auto 20px; max-width: 400px; border-bottom: 4px solid #333333;">Your Hearing Results</h2>
+      
+      <table cellpadding="0" cellspacing="0" class="results-test" style="width: 100%; line-height: 150%; padding: 20px 20px 0px;">
+        <thead class="results-test-header">
+          <tr>
+            <td colspan="3" style="width: 40%;">
+              <p>Your Overall Hearing Fitness is</p>
+              <h1 class="h1" style="font-size: 65px; line-height: 65px; color: #362f2d; font-family: Helvetica, Arial, sans-serif;">{{range}}</h1>
+              {% if range == 'Good to Go' %}
+                <h2 class="h2" style="font-size: 18px; line-height: 25px; max-width: 600px; margin: auto;">Congrats! Your hearing seems to be pretty good.</h2>
+              {% elif range == 'Needs Attention' %}
+                <h2 class="h2" style="font-size: 18px; line-height: 25px; max-width: 600px; margin: auto;">Don&#8217;t panic! While your hearing isn&#8217;t what it used to be, it&#8217;s pretty good for someone your age. Plus, we have some simple ways to improve it.</h2>
+              {% else %}
+                <h2 class="h2" style="font-size: 18px; line-height: 25px; max-width: 600px; margin: auto;">Don&#8217;t panic! You seem to have some hearing loss. The good news? We can help.</h2>
+              {% endif %}
+            </td>
+          </tr>
+          <tr>
+            <td class="results-test-header-left" style="font-size: 18px; text-align: left; padding: 20px 0; width: 40%;"><span class="button-label" style="display: inline-block; font-size: 18px; padding: 15px; background: #d3d4d6; color: white; border-radius: 4px; font-weight: bold;">Left Ear</span></td>
+            <td></td>
+            <td class="results-test-header-right" style="font-size: 18px; text-align: right; padding: 20px 0; width: 40%;"><span class="button-label" style="display: inline-block; font-size: 18px; padding: 15px; background: #d3d4d6; color: white; border-radius: 4px; font-weight: bold;">Right Ear</span></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width: 40%;">
+              <div class="bar" style="margin-bottom: 10px; margin-top: 10px; background: #f2f2f2; color: white; text-align: right;">
+                <div class="bar-inner" style="display: inline-block; text-align: left; padding: 4px; width: {{results['L']['4000']}}%;
+                {% if results['L']['4000'] >= 85 %}
+                  background-color:#8dc63f;
+                {% elif results['L']['4000'] >= 45 and results['L']['4000'] < 85 %}
+                  background-color:#fccd09;
+                {% else %}
+                  background-color:#ef4036;
+                {% endif %}
+                ">{{results['L']['4000']}}%</div>
+              </div>
+            </td>
+            <td style="text-align:center;">High Tones</td>
+            <td style="width: 40%;">
+              <div class="bar" style="margin-bottom: 10px; margin-top: 10px; background: #f2f2f2; color: white; text-align: left;">
+                <div class="bar-inner" style="display: inline-block; padding: 4px; text-align: right; width: {{results['R']['4000']}}%;
+                {% if results['R']['4000'] >= 85 %}
+                  background-color:#8dc63f;
+                {% elif results['R']['4000'] >= 45 and results['R']['4000'] < 85 %}
+                  background-color:#fccd09;
+                {% else %}
+                  background-color:#ef4036;
+                {% endif %}
+                ">{{results['R']['4000']}}%</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 40%;">
+              <div class="bar" style="margin-bottom: 10px; margin-top: 10px; background: #f2f2f2; color: white; text-align: right;">
+                <div class="bar-inner" style="display: inline-block; text-align: left; padding: 4px; width: {{ results['L']['2000'] }}%;
+                {% if results['L']['2000'] >= 85 %}
+                  background-color:#8dc63f;
+                {% elif results['L']['2000'] >= 45 and results['L']['2000'] < 85 %}
+                  background-color:#fccd09;
+                {% else %}
+                  background-color:#ef4036;
+                {% endif %}
+                 ">{{ results['L']['2000'] }}%</div>
+              </div>
+            </td>
+            <td rowspan="2" style="text-align:center;">Mid Tones</td>
+            <td style="width: 40%;">
+              <div class="bar" style="margin-bottom: 10px; margin-top: 10px; background: #f2f2f2; color: white; text-align: left;">
+                <div class="bar-inner" style="display: inline-block; padding: 4px; text-align: right; width: {{ results['R']['2000'] }}%;
+                {% if results['R']['2000'] >= 85 %}
+                  background-color:#8dc63f;
+                {% elif results['R']['2000'] >= 45 and results['R']['2000'] < 85 %}
+                  background-color:#fccd09;
+                {% else %}
+                  background-color:#ef4036;
+                {% endif %}
+                ">{{ results['R']['2000'] }}%</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 40%;">
+              <div class="bar" style="margin-bottom: 10px; margin-top: 10px; background: #f2f2f2; color: white; text-align: right;">
+                <div class="bar-inner" style="display: inline-block; text-align: left; padding: 4px; width: {{ results['L']['1000'] }}%;
+                {% if results['L']['1000'] >= 85 %}
+                  background-color:#8dc63f;
+                {% elif results['L']['1000'] >= 45 and results['L']['1000'] < 85 %}
+                  background-color:#fccd09;
+                {% else %}
+                  background-color:#ef4036;
+                {% endif %}
+                ">{{ results['L']['1000'] }}%</div>
+              </div>
+            </td>
+            <td style="width: 40%;">
+              <div class="bar" style="margin-bottom: 10px; margin-top: 10px; background: #f2f2f2; color: white; text-align: left;">
+                <div class="bar-inner" style="display: inline-block; padding: 4px; text-align: right; width: {{ results['R']['1000'] }}%;
+                {% if results['R']['1000'] >= 85 %}
+                  background-color:#8dc63f;
+                {% elif results['R']['1000'] >= 45 and results['R']['1000'] < 85 %}
+                  background-color:#fccd09;
+                {% else %}
+                  background-color:#ef4036;
+                {% endif %}
+                ">{{ results['R']['1000'] }}%</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 40%;">
+              <div class="bar" style="margin-bottom: 10px; margin-top: 10px; background: #f2f2f2; color: white; text-align: right;">
+                <div class="bar-inner" style="display: inline-block; text-align: left; padding: 4px; width: {{ results['L']['500'] }}%;
+                {% if results['L']['500'] >= 85 %}
+                  background-color:#8dc63f;
+                {% elif results['L']['500'] >= 45 and results['L']['500'] < 85 %}
+                  background-color:#fccd09;
+                {% else %}
+                  background-color:#ef4036;
+                {% endif %}
+                ">{{ results['L']['500'] }}%</div>
+              </div>
+            </td>
+            <td style="text-align:center;">Low Tones</td>
+            <td style="width: 40%;">
+              <div class="bar" style="margin-bottom: 10px; margin-top: 10px; background: #f2f2f2; color: white; text-align: left;">
+                <div class="bar-inner" style="display: inline-block; padding: 4px; text-align: right; width: {{ results['R']['500'] }}%;
+                {% if results['R']['500'] >= 85 %}
+                  background-color:#8dc63f;
+                {% elif results['R']['500'] >= 45 and results['R']['500'] < 85 %}
+                  background-color:#fccd09;
+                {% else %}
+                  background-color:#ef4036;
+                {% endif %}
+                ">{{ results['R']['500'] }}%</div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+
+      <div style="max-width:550px; margin: auto">
+        <p class="text-heading" style="font-weight: bold; font-size: 18px;">High-Pitched Tones</p>
+        <p>{{ tones['high'] | safe }}</p>
+        <p class="text-heading" style="font-weight: bold; font-size: 18px;">Mid-Range Tones</p>
+        <p>{{ tones['mid'] | safe }}</p>
+        <p class="text-heading" style="font-weight: bold; font-size: 18px;">Low-Pitched Tones</p>
+        <p>{{ tones['low'] | safe }}</p>
+      </div>
+
+    </div>
+    <div class="next-steps" style="background: #26bad4; color: white; padding: 40px;">
+      <h1 class="h1" style="font-size: 65px; font-family: Helvetica, Arial, sans-serif; color: white; margin: 0;">Your Next Steps</h1>
+      <p style="margin: auto; max-width: 500px; margin-top: 1em;">Now that you have your unique hearing profile, it&#8217;s time to hear better. It doesn&#8217;t have to be complicated or expensive. Check out our recommendations below.</p>
+    </div>
+    <div class="next-steps-arrow" style="background-color: white;"><span style="display: inline-block; width: 0; height: 0; border-left: 40px solid transparent; border-right: 40px solid transparent; border-top: 40px solid #26bad4;"></span></div>
+    <div class="options" style="background: white; padding: 30px;">
+
+      <div class="pad-y" style="padding-top: 15px; padding-bottom: 15px; margin-bottom: 40px;">
+        <br><div class="pill" style="display: inline-block; background: #333; color: white; border-radius: 999px; padding: 10px 20px;">Option 1</div><br><br>
+        <h2 class="section-title" style="color: #333333; font-weight: normal; font-size: 1em; padding: 0 20px 10px 20px; margin: 0 auto 20px; max-width: 400px; border-bottom: 4px solid #333333;">
+          For Immediate Improvement
+        </h2>
+
+        <h1 class="h1" style="font-size: 65px; color: #362f2d; font-family: Helvetica, Arial, sans-serif; margin-bottom: 0;">The Audicus Solo</h1>
+        <p style="font-size: 16px; max-width: 600px; margin: 20px auto;">The Audicus Solo is the quickest way to get your hearing where you want it to be. You&#8217;ll feel a change right away&#8212; no doctor&#8217;s visits necessary.</p>
+
+        <a href="https://www.audicus.com/pages/hearing-aids" class="button" style="display: inline-block; background: #ffcc00; color: white; font-size: 18px; font-weight: bold; border-radius: 4px; padding: 20px; min-width: 400px; text-decoration: none;">See pricing &rarr;</a>
+      </div>
+
+      <div class="pad-y" style="padding-top: 15px; padding-bottom: 15px;">
+        <br><div class="pill" style="display: inline-block; background: #333; color: white; border-radius: 999px; padding: 10px 20px;">Option 2</div><br><br>
+        <h2 class="section-title" style="color: #333333; font-weight: normal; font-size: 1em; padding: 0 20px 10px 20px; margin: 0 auto 20px; max-width: 400px; border-bottom: 4px solid #333333;">
+          For A Deeper Understanding
+        </h2>
+
+        <h1 class="h1" style="font-size: 65px; color: #362f2d; font-family: Helvetica, Arial, sans-serif; margin-bottom: 0;">Get An Audiogram</h1>
+        <p style="font-size: 16px; max-width: 600px; margin: 20px auto;">An audiogram is an official hearing test administered by an audiologist. It&#8217;s the most accurate way to understand your hearing.</p>
+
+        <a href="https://www.audicus.com/get-a-hearing-aid" class="button" style="display: inline-block; background: #ffcc00; color: white; font-size: 18px; font-weight: bold; border-radius: 4px; padding: 20px; min-width: 400px; text-decoration: none;">Find an audiologist &rarr;</a>
+
+        <p class="helper-text" style="color: #999; font-size: 16px; max-width: 600px; margin: 20px auto;">If you don&#8217;t have a provider, enter your zip code for options.<br>(a new window with results from ZocDoc will appear)</p>
+      </div>
+
+    </div>
+
+    <p class="footer-disclaimer" style="font-size: 12px; padding: 20px; color: #999; margin: 0;">This email was automatically generated. If you received this message in error, please send us an email at <a href="mailto:help@audicus.com" target="_blank" class="footer-link" style="color: #999;">help@audicus.com</a>.</p>
+    <table cellpadding="0" cellspacing="0" class="footer" style="width: 100%; color: #555555; line-height: 150%; padding: 10px 20px 0px;">
+      <tbody>
+        <tr>
+          <td valign="top" align="left" style="width: 33%; padding: 20px 0 15px; text-align: center;">
+            <img src="https://www.audicus.com/emails/images/phone.png" alt="Phone" height="40" style="display: block; margin: auto;">
+            <p class="footer-heading" style="font-size: 18px; margin: 0px; font-weight: bold; color: #333333; text-align: center;">Phone</p>
+            <p class="footer-text" style="margin-top: 5px; text-align: center;"><a href="tel:855.971.0451" style="color: #555; text-decoration: none;">855.971.0451</a></p>
+          </td>
+          <td valign="top" align="center" style="width: 33%; padding: 20px 0 15px; text-align: center;">
+            <div style="height:40px">
+              <a href="https://www.facebook.com/audicus" class="footer-icon" style="text-decoration: none;">
+                <img alt="Facebook" width="50" src="https://www.audicus.com/emails/images/facebook.png" style="display: inline-block; margin: 0 5px; width: 35px; height: 35px;">
+              </a>
+              <a href="https://twitter.com/Audicus" class="footer-icon" style="text-decoration: none;">
+                <img alt="Twitter" width="50" src="https://www.audicus.com/emails/images/twitter.png" style="display: inline-block; margin: 0 5px; width: 35px; height: 35px;">
+              </a>
+            </div>
+            <p class="footer-heading" style="font-size: 18px; margin: 0px; font-weight: bold; color: #333333; text-align: center;">Audicus</p>
+            <p class="footer-text" style="margin-top: 5px; text-align: center;">40 Exchange Place<br>Suite 1920<br>New York, NY</p>
+          </td>
+          <td valign="top" align="right" style="width: 33%; padding: 20px 0 15px; text-align: center;">
+            <div style="height:40px">
+            <img src="https://www.audicus.com/emails/images/mail.png" alt="Email" width="40" style="display: block; margin: auto;">
+            </div>
+            <p class="footer-heading" style="font-size: 18px; margin: 0px; font-weight: bold; color: #333333; text-align: center;">Email</p>
+            <p class="footer-text" style="margin-top: 5px; text-align: center;"><a href="mailto:help@audicus.com" style="color: #555; text-decoration: none;">help@audicus.com</a></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

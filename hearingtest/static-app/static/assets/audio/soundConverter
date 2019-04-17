@@ -1,0 +1,12 @@
+#!/bin/bash
+for fullfile in *.wav; do
+    filename=$(basename "$fullfile")
+	extension="${filename##*.}"
+	filename="${filename%.*}"
+	right="calibrate/R_"$filename".wav"
+	left="calibrate/L_"$filename".wav"
+	both="calibrate/B_"$filename".wav"
+	sox ${fullfile} ${right} remix 0 1 
+	sox ${fullfile} ${left} remix 1 0
+	sox ${fullfile} ${both} remix 1 1
+done

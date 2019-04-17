@@ -1,0 +1,18 @@
+#!/bin/bash
+
+ARRAYHZ=(500 1000 2000 4000 8000)
+ARRAYDB=(0 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90)
+
+for hz in ${ARRAYHZ[@]}; do
+	for db in ${ARRAYDB[@]}; do
+
+	    right="R"$hz"_"$db"dB.wav"
+	    left="L"$hz"_"$db"dB.wav"
+
+	    rightOut="calibrate/R"$hz"_"$db"dB.wav"
+	    leftOut="calibrate/L"$hz"_"$db"dB.wav"
+		
+		sox ${right} ${rightOut} remix 0 1 
+		sox ${left} ${leftOut} remix 1 0
+	done
+done

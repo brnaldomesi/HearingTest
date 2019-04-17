@@ -1,0 +1,15 @@
+{% extends "emails/base_email.html" %}
+{% block email_body %}
+
+<table cellpadding="0" cellspacing="0" style="width: 100%; font-family: Helvetica, Arial, sans serif; color: #555555; line-height: 150%; padding: 0px 20px 5px;"><tbody>
+
+  <tr><td valign="top" align="left" style="padding-bottom: 20px; border-bottom: 1px solid #dddddd;">
+
+    <h1 style="font-size: 24px; font-weight: bold; line-height: 100%; margin: 25px 0 0; color: #000000;">Notification</h1>
+    <p style="font-size: 14px; margin: 10px 0 0;">{{ title }}</p>
+
+</tbody></table>
+
+{{ body }}
+
+{% endblock %}
